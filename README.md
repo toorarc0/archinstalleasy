@@ -4,6 +4,8 @@ And everything works very crookedly, especially if you look closely in the file 
 
 (pacman -S dos2unix, dos2unix archinstall.sh)
 
+don't forget to make the file executable using chmod +x archinstall.sh
+
 In general there are a lot of ERRORS here, if anyone can help me with this I will be sooooo grateful
 
 Well, the AI also helped me a little, okay.
