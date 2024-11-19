@@ -17,17 +17,17 @@ parted $DISK mklabel gpt
 echo "Создание разделов..."
 
 # 50 ГБ для системы
-parted $DISK mkpart primary ext4 1MiB 50GiB -1
+parted $DISK mkpart primary ext4 1MiB 50GiB
 
 # 1 ГБ для EFI
-parted $DISK mkpart primary fat32 50GiB 51GiB -1
+parted $DISK mkpart primary fat32 50GiB 51GiB
 parted $DISK set 2 esp on
 
 # 4 ГБ для Swap
-parted $DISK mkpart primary linux-swap 51GiB 55GiB -1
+parted $DISK mkpart primary linux-swap 51GiB 55GiB
 
 # Оставшееся пространство для Home
-parted $DISK mkpart primary ext4 55GiB 100% -1
+parted $DISK mkpart primary ext4 55GiB 100%
 
 # Форматирование разделов
 echo "Форматирование разделов..."
