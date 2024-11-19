@@ -69,7 +69,7 @@ echo "Система смонтирована в /mnt"
 echo "EFI смонтирован в /mnt/boot/efi"
 echo "Home смонтирован в /mnt/home"
 
-pacstrap -i /mnt base base-devel linux linux-firmware linux-headers sudo nano networkmanager efibootmgr --noconfirm
+pacstrap -i /mnt base base-devel linux linux-firmware linux-headers sudo nano networkmanager efibootmgr
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
@@ -80,16 +80,16 @@ sed -i 's/#$ru_RU.UTF-8$/ru_RU.UTF-8/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ln -sf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
-hwclock --systohc --utc --noconfirm
-echo archpc > /etc/hostname --noconfirm
+hwclock --systohc --utc
+echo archpc > /etc/hostname
 echo "127.0.1.1 localhost.localdomain archpc" | sudo tee -a /etc/hosts
-systemctl enable NetworkManager --noconfirm
+systemctl enable NetworkManager
 useradd -m -g users -G wheel -s /bin/bash superuser
 passwd superuser
 EDITOR=nano
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
-mkdir /boot/efi --noconfirm
-pacman -S grub --noconfirm
+mkdir /boot/efi
+pacman -S grub
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 passwd
