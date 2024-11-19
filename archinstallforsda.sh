@@ -71,28 +71,28 @@ echo "Home смонтирован в /mnt/home"
 
 pacstrap -i /mnt base base-devel linux linux-firmware linux-headers sudo nano networkmanager efibootmgr --noconfirm
 
-genfstab -U -p /mnt >> /mnt/etc/fstab --noconfirm
+genfstab -U -p /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt /bin/bash --noconfirm
+arch-chroot /mnt /bin/bash
 
 sed -i 's/#$en_US.UTF-8$/en_US.UTF-8/' /etc/locale.gen
 sed -i 's/#$ru_RU.UTF-8$/ru_RU.UTF-8/' /etc/locale.gen
-locale-gen --noconfirm
-echo "LANG=en_US.UTF-8" > /etc/locale.conf --noconfirm
-ln -sf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime --noconfirm
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+ln -sf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 hwclock --systohc --utc --noconfirm
 echo archpc > /etc/hostname --noconfirm
-echo "127.0.1.1 localhost.localdomain archpc" | sudo tee -a /etc/hosts --noconfirm
+echo "127.0.1.1 localhost.localdomain archpc" | sudo tee -a /etc/hosts
 systemctl enable NetworkManager --noconfirm
-useradd -m -g users -G wheel -s /bin/bash superuser --noconfirm
-passwd superuser --noconfirm
+useradd -m -g users -G wheel -s /bin/bash superuser
+passwd superuser
 EDITOR=nano
-sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers --noconfirm
+sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 mkdir /boot/efi --noconfirm
 pacman -S grub --noconfirm
-grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable --noconfirm
-grub-mkconfig -o /boot/grub/grub.cfg --noconfirm
-passwd --noconfirm
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
+grub-mkconfig -o /boot/grub/grub.cfg
+passwd
 exit
 umount -R /mnt
 reboot
