@@ -3,6 +3,8 @@ I made this version of "archinstall" to make it easier for ME to install Arch Li
 Well, the neural network also helped me a little, okay.
 
 # disk partitions
+ATTENTION! A PARTITION IS CREATED IN /dev/nvme0n1, USE THE SOURCE CODE TO CHANGE THE VALUES OF /dev/nvme0n1 TO YOUR DISK!!! (for example /dev/sda)
+
 50G for Linux System
 
 1G for efi
