@@ -6,7 +6,7 @@ And everything works very crookedly, especially if you look closely in the file 
 
 In general there are a lot of ERRORS here, if anyone can help me with this I will be sooooo grateful
 
-Well, the neural network also helped me a little, okay.
+Well, the AI also helped me a little, okay.
 
 # disk partitions
 ATTENTION! A PARTITION IS CREATED IN /dev/nvme0n1, USE THE SOURCE CODE TO CHANGE THE VALUES OF /dev/nvme0n1 TO YOUR DISK!!! (for example /dev/sda)
