@@ -8,6 +8,8 @@ In general there are a lot of ERRORS here, if anyone can help me with this I wil
 
 Well, the AI also helped me a little, okay.
 
+The whole problem with my program is that it uninstalls itself after installing the pacstrap command, and therefore it cannot continue the installation.
+
 # disk partitions
 ATTENTION! A PARTITION IS CREATED IN /dev/nvme0n1, USE THE SOURCE CODE TO CHANGE THE VALUES OF /dev/nvme0n1 TO YOUR DISK!!! (for example /dev/sda)
 
@@ -25,7 +27,3 @@ for the computer name and host I used
 
 for username
 "superuser" (I love this nickname so much)
-
-# Version 1.0.0, My first launch of my own programm
-
-My first launch of my own programm was a failure, it seems I made a lot of errors in my code... somewhere it did everything correctly, but the system could not start without installation disk (despite the fact that GRUB was installed haha)
