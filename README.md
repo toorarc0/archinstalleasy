@@ -26,4 +26,6 @@ for the computer name and host I used
 for username
 "superuser" (I love this nickname so much)
 
-My first launch of my own program was a failure, it seems I made a lot of errors in my code... somewhere it did everything correctly, but the system could not start without installation disk (despite the fact that GRUB was installed haha)
+# Version 1.0.0, My first launch of my own programm
+
+My first launch of my own programm was a failure, it seems I made a lot of errors in my code... somewhere it did everything correctly, but the system could not start without installation disk (despite the fact that GRUB was installed haha)
